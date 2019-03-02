@@ -45,37 +45,36 @@ public class MainActivity extends AppCompatActivity {
 
         Glide.with(this)
                 .load("https://www.android.com/static/2016/img/share/andy-lg.png")
-                .apply(new RequestOptions().centerCrop())
+                .centerCrop()
                 .into(imageView2);
 
         Glide.with(this)
                 .load("https://www.android.com/static/2016/img/share/andy-lg.png")
-                .apply(new RequestOptions().circleCrop())
+                .circleCrop()
                 .into(imageView3);
 
         Glide.with(this)
                 .load("https://www.android.com/static/2016/img/share/andy-lg.png")
-                .apply(new RequestOptions().override(50, 50))
+                .override(50, 50)
                 .into(imageView4);
 
         Glide.with(this)
                 .load("https://cdn-images-1.medium.com/max/1200/1*OFJKA8dRYZSb-Kprx-VReg.png")
-                .apply(new RequestOptions().error(R.drawable.errorimage))
+                .error(R.drawable.errorimage)
                 .into(imageView5);
 
         Glide.with(this)
                 .load("https://sdtimes.com/wp-content/uploads/2018/03/2NqZJYQI_400x400.png")
-                .apply(new RequestOptions().error(R.drawable.errorimage)
+                .error(R.drawable.errorimage)
                         .skipMemoryCache(true)
-                        .diskCacheStrategy(DiskCacheStrategy.NONE))
+                        .diskCacheStrategy(DiskCacheStrategy.NONE)
                 .into(imageView6);
 
         Glide.with(this)
                 .load("https://sdtimes.com/wp-content/uploads/2018/03/2NqZJYQI_400x400.png")
-                .apply(new RequestOptions()
                         .skipMemoryCache(true)
                         .diskCacheStrategy(DiskCacheStrategy.NONE)
-                        .placeholder(R.drawable.errorimage))
+                        .placeholder(R.drawable.errorimage)
                 .listener(new RequestListener<Drawable>() {
                     @Override
                     public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
