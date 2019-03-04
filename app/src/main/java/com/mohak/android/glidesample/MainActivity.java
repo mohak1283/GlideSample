@@ -43,38 +43,56 @@ public class MainActivity extends AppCompatActivity {
                 .load("https://www.android.com/static/2016/img/share/andy-lg.png")
                 .into(imageView);
 
+        RequestOptions requestOptions = new RequestOptions()
+                .centerCrop();
+
         Glide.with(this)
+                .setDefaultRequestOptions(requestOptions)
                 .load("https://www.android.com/static/2016/img/share/andy-lg.png")
-                .centerCrop()
                 .into(imageView2);
 
+        RequestOptions requestOptions2 = new RequestOptions()
+                .circleCrop();
+
         Glide.with(this)
+                .setDefaultRequestOptions(requestOptions2)
                 .load("https://www.android.com/static/2016/img/share/andy-lg.png")
-                .circleCrop()
                 .into(imageView3);
 
+        RequestOptions requestOptions3 = new RequestOptions()
+                .override(50, 50);
+
         Glide.with(this)
+                .setDefaultRequestOptions(requestOptions3)
                 .load("https://www.android.com/static/2016/img/share/andy-lg.png")
-                .override(50, 50)
                 .into(imageView4);
 
+        RequestOptions requestOptions4 = new RequestOptions()
+                .error(R.drawable.errorimage);
+
         Glide.with(this)
+                .setDefaultRequestOptions(requestOptions4)
                 .load("https://cdn-images-1.medium.com/max/1200/1*OFJKA8dRYZSb-Kprx-VReg.png")
-                .error(R.drawable.errorimage)
                 .into(imageView5);
 
-        Glide.with(this)
-                .load("https://sdtimes.com/wp-content/uploads/2018/03/2NqZJYQI_400x400.png")
+        RequestOptions requestOptions5 = new RequestOptions()
                 .error(R.drawable.errorimage)
-                        .skipMemoryCache(true)
-                        .diskCacheStrategy(DiskCacheStrategy.NONE)
-                .into(imageView6);
+                .skipMemoryCache(true)
+                .diskCacheStrategy(DiskCacheStrategy.NONE);
 
         Glide.with(this)
+                .setDefaultRequestOptions(requestOptions5)
                 .load("https://sdtimes.com/wp-content/uploads/2018/03/2NqZJYQI_400x400.png")
-                        .skipMemoryCache(true)
-                        .diskCacheStrategy(DiskCacheStrategy.NONE)
-                        .placeholder(R.drawable.errorimage)
+                .into(imageView6);
+
+        RequestOptions requestOptions6 = new RequestOptions()
+                .skipMemoryCache(true)
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                .placeholder(R.drawable.errorimage);
+
+        Glide.with(this)
+                .setDefaultRequestOptions(requestOptions6)
+                .load("https://sdtimes.com/wp-content/uploads/2018/03/2NqZJYQI_400x400.png")
                 .listener(new RequestListener<Drawable>() {
                     @Override
                     public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
